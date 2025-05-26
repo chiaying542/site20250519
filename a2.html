@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML a openpage demo</title>
+        <style>
+            html,body {
+                scroll-behavior: smooth;
+            }
+            header {
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 100;
+                background-color: #fff;
+            }
+
+            .page {
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #fa6464;
+            }
+
+            .page:nth-child(even) {
+                background-color: #24c29a;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>My Profile</h1>
+            <div>
+                <a href="#about">About</a>
+                <a href="#profolio">Profolio</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </header>
+        <div id="about" class="page">
+            <h2>About</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                quos.
+            </p>
+        </div>
+        <div id="profolio" class="page">
+            <h2>Profolio</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                quos.
+            </p>
+        </div>
+        <div id="contact" class="page">
+            <h2>Contact</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                quos.
+            </p>
+    </body>
+</html>
