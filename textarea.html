@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML textarea</title>
+        <style>
+            #textarea {
+                resize: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- XSS -->
+        <form action="https://book.niceinfos.com/api/form/index.php">
+            <div class="container">
+                <h1>HTML textarea</h1>
+                <input type="text" name="text" id="text" />
+                <textarea
+                    name="textarea"
+                    id="textarea"
+                    cols="50"
+                    rows="20"
+                ></textarea>
+            </div>
+            <button type="submit">送出</button>
+        </form>
+    </body>
+    <!-- &lt;script&gt;alert(1)&lt;/script&gt; -->
+</html>
