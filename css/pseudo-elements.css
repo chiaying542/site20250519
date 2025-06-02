@@ -1,0 +1,24 @@
+.hello::before {
+    content: "David";
+}
+
+.hello::after {
+    content: "!!!!!!";
+}
+
+.article::first-letter {
+    font-size: 30px;
+    background: #289e2da8;
+    color: #fff;
+    padding: 10px;
+}
+
+.article::selection {
+    background: #b118e0;
+    color: #fff;
+}
+
+.article{ 
+    border: 1px solid #0000;
+    padding: 10px;
+}
