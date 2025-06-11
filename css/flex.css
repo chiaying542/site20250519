@@ -1,0 +1,42 @@
+.row {
+    display: flex;
+    border: 1px solid black;
+    margin: 10px 0px;
+    /* min-height: 100px; */
+}
+
+.col {
+    padding: 10px;
+    margin: 5px;
+    background-color: rgb(55, 0, 255);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+}
+
+.x-start {
+    justify-content: flex-start;
+}
+
+.x-center {
+    justify-content: center;
+}
+
+.x-end {
+    justify-content: flex-end;
+}
+
+.title {
+    padding: 10px;
+    background-color: blueviolet;
+    color: #fff;
+    margin: 10px 0px;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
