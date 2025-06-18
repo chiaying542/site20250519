@@ -1,0 +1,21 @@
+.fuild-media {
+    width: 100%;
+    padding: 20px;
+}
+.profile {
+    border: 2px solid rgb(167, 143, 143);
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 900px) {
+    .profile {
+        background-color: red;
+        grid-template-columns: 1fr;
+    }
+    .profile .text {
+        color: white;
+    }
+}
