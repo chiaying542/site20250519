@@ -1,0 +1,18 @@
+@media screen and (max-width: 768px) {
+    .main {
+        .wrap {
+            .btn-group {
+                flex-direction: column;
+                min-width: 300px;
+            }
+        }
+    }
+
+    .info {
+        .row {
+            grid-template-columns: 1fr;
+            min-width: 300px;
+            gap: 40px;
+        }
+    }
+}

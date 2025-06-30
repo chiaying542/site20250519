@@ -142,13 +142,14 @@
 }
 
 .info {
-    background-color: #ffffff;
-    padding: 100px 0;
+    background-color: white;
+    padding: 50px;
 
     .slogan {
         font-size: 2rem;
         text-align: center;
-        margin-bottom: 50px;
+        padding: 20px;
+        margin-bottom: 20px;
     }
 
     .row {
@@ -157,23 +158,21 @@
         gap: 20px;
 
         > div {
-            background-color: #f9fafb;
-            padding: 20px;
-            border-radius: 10px;
+            background-color: #e7eaf7;
+            padding: 10px;
+            border-radius: 5px;
             box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
-        }
 
-        h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-align: center;
-            color: #4621ac;
-        }
+            h3 {
+                text-align: center;
+                color: #593081;
+                margin: 5px;
+                font-size: 25px;
+            }
 
-        p {
-            text-align: center;
-            line-height: 25px;
+            p {
+                text-align: center;
+            }
         }
     }
 }
@@ -184,3 +183,5 @@
     text-align: center;
     padding: 20px 0;
 }
+
+@import "layout-hero-responsive";
