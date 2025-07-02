@@ -1,18 +1,100 @@
 @media screen and (max-width: 768px) {
-    .main {
+    .header {
         .wrap {
-            .btn-group {
-                flex-direction: column;
-                min-width: 300px;
+            position: relative;
+            justify-content: center;
+
+            .hamburger {
+                display: grid;
+                position: absolute;
+                right: 0;
+
+                > span {
+                    &:nth-child(1) {
+                        animation: hamburger-line-1-close 0.5s ease forwards;
+                    }
+                    &:nth-child(2) {
+                        animation: hamburger-line-2-close 0.5s ease forwards;
+                    }
+                    &:nth-child(3) {
+                        animation: hamburger-line-3-close 0.5s ease forwards;
+                    }
+                }
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .logo {
+                // text-align: center;
+                // flex: 1;
+            }
+        }
+
+        #menu-toggle {
+            // display: none;
+            &:checked ~ .wrap {
+                .menu {
+                    display: block;
+                    position: fixed;
+                    background-color: #0000007c;
+                    top: 0;
+                    left: 0;
+                    height: 100vh;
+                    width: 100%;
+
+                    ul {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 40px;
+                        padding: 20px;
+                        background-color: rgb(118, 132, 209);
+                        width: 50%;
+                        height: 100%;
+                    }
+                }
+                .hamburger {
+                    > span {
+                        background-color: #fd1f1f;
+                        &:nth-child(1) {
+                            transform: translateY(15px) rotate(45deg);
+                        }
+                        &:nth-child(2) {
+                            opacity: 0;
+                        }
+                        &:nth-child(3) {
+                            transform: translateY(-11px) rotate(-45deg);
+                        }
+                    }
+                }
             }
         }
     }
+}
 
-    .info {
-        .row {
-            grid-template-columns: 1fr;
-            min-width: 300px;
-            gap: 40px;
+.main {
+    .wrap {
+        .btn-group {
+            flex-direction: column;
+            width: 300px;
+        }
+    }
+}
+
+.info {
+    .row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main {
+        .wrap {
+            .btn-group {
+                width: unset;
+            }
         }
     }
 }
