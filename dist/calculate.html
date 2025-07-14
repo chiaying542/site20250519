@@ -11,24 +11,24 @@
             <div id="app">
                 <h1>計算機</h1>
                 <div class="input-wrap">
-                    <input type="number" placeholder="請輸入數字" id="num1" />
+                    <input type="number" placeholder="請輸入數字1" id="num1" />
                     <select id="operator">
                         <option>+</option>
                         <option>-</option>
                         <option>*</option>
                         <option>/</option>
                     </select>
-                    <input type="number" placeholder="請輸入數字" id="num2" />
+                    <input type="number" placeholder="請輸入數字2" id="num2" />
                 </div>
                 <div class="btn-wrap">
                     <button id="calc-btn">計算</button>
                 </div>
-                <div class="result-wrap">
-                    計算結果:
-                    <span id="result-value"></span>
+                <div id="result-wrap" class="hide">
+                    計算結果: <span id="result">30</span>
                 </div>
             </div>
         </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/calculate.js"></script>
 </html>
