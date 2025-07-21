@@ -16,6 +16,12 @@ function showResultWrap() {
     resultWrap.classList.remove("hide");
 }
 
+/*
+const showResultWrap = function() {
+
+}
+*/
+
 const calcRun = () => {
     initResultWrap();
     // 1. 取得使用者輸入的數字
