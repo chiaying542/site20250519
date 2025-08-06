@@ -15,23 +15,47 @@
                         <div class="user">
                             <div class="current-user">
                                 <span>目前使用者：</span>
-                                <span class="light">user1</span>
+                                <span class="light">{{ currentUser }}</span>
                             </div>
                             <div class="change-user">
-                                <button class="btn warning">更換使用者</button>
+                                <button class="btn warning" @click="changeUser">
+                                    更換使用者
+                                </button>
                             </div>
                         </div>
                         <div class="api">
                             <div class="current-api">
-                                <span>API 位置：</span>
-                                <span class="light">未設定</span>
-                                <span
-                                    >（狀態：<span class="danger">未設定</span
-                                    >）</span
-                                >
+                                <div>
+                                    <span>API 位置：</span>
+                                    <span class="light">{{ api }}</span>
+                                    <span
+                                        >（狀態：
+                                        <span class="danger" v-show="!api"
+                                            >未設定</span
+                                        >
+                                        <span class="success" v-show="api"
+                                            >已設定</span
+                                        >
+                                        ）</span
+                                    >
+                                </div>
+                                <div class="api-btn">
+                                    <button
+                                        class="btn primary"
+                                        @click="getTodo"
+                                    >
+                                        載入
+                                    </button>
+                                    <button class="btn danger" @click="setTodo">
+                                        儲存
+                                    </button>
+                                </div>
                             </div>
+
                             <div class="change-api">
-                                <button class="btn primary">設定 API</button>
+                                <button class="btn primary" @click="setAPI">
+                                    設定 API
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -54,16 +78,42 @@
                     <div class="list">
                         <div class="list-wrap">
                             <div class="process list-item">
+                                <h2>待處理</h2>
+                                <ul class="list-group">
+                                    <template
+                                        v-for="(item, index) in statusItems('pending')"
+                                        :key="index"
+                                    >
+                                        <li
+                                            @click="toStatus(item.id, 'process')"
+                                        >
+                                            <div>{{ item.text }}</div>
+                                            <div>
+                                                <button
+                                                    class="btn danger"
+                                                    @click.stop="deleteItem(item.id)"
+                                                >
+                                                    刪除
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                            <div class="process list-item">
                                 <h2>進行中</h2>
                                 <ul class="list-group">
                                     <template
-                                        v-for="(item, index) in processItems()"
+                                        v-for="(item, index) in statusItems('process')"
                                         :key="index"
                                     >
-                                        <li @click="toDone(item.id)">
+                                        <li @click="toStatus(item.id, 'done')">
                                             <div>{{ item.text }}</div>
                                             <div>
-                                                <button class="btn danger">
+                                                <button
+                                                    class="btn danger"
+                                                    @click.stop="deleteItem(item.id)"
+                                                >
                                                     刪除
                                                 </button>
                                             </div>
@@ -75,13 +125,18 @@
                                 <h2>已完成</h2>
                                 <ul class="list-group done">
                                     <template
-                                        v-for="(item, index) in doneItems()"
+                                        v-for="(item, index) in statusItems('done')"
                                         :key="index"
                                     >
-                                        <li @click="toProcess(item.id)">
+                                        <li
+                                            @click="toStatus(item.id, 'pending')"
+                                        >
                                             <div>{{ item.text }}</div>
                                             <div>
-                                                <button class="btn danger">
+                                                <button
+                                                    class="btn danger"
+                                                    @click.stop="deleteItem(item.id)"
+                                                >
                                                     刪除
                                                 </button>
                                             </div>
@@ -95,6 +150,8 @@
             </div>
         </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="module" src="./js/todo-app.js"></script>
+    <!-- <script src="./js/todo-app.js"></script> -->
 </html>
