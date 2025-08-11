@@ -1,3 +1,5 @@
 import { Loader } from "./components/Loader.js";
+import { Header } from "./components/Header.js";
 
-Loader.html("components/header.html", "#header-container");
+await Loader.html("components/header.html", "#header-container");
+Header.activeMenu("partner");
